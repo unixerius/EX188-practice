@@ -3,11 +3,11 @@
   hosts: workstation
   strategy: free
   ignore_errors: true
-  gather_facts: false
+  gather_facts: true
   tasks:
   - name: Configuring network
     shell: >
-      nmcli con mod "System enp0s8" 
+      nmcli con mod "{{ ansible_default_ipv4.interface }}" 
       ipv4.addresses "192.168.88.4/24"
       ipv4.gateway " 192.168.88.1"
       ipv4.dns "8.8.8.8" 

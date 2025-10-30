@@ -1,6 +1,7 @@
 ---
 - name: Setting up Registry Server
   hosts: registry
+  gather_facts: yes
   strategy: free
   ignore_errors: true
   become: true
@@ -15,7 +16,7 @@
   tasks:
     - name: Configuring network
       shell: >
-        nmcli con mod "System enp0s8"
+        nmcli con mod "{{ ansible_default_ipv4.interface }}"
         ipv4.addresses "192.168.88.5/24"
         ipv4.gateway "192.168.88.1"
         ipv4.dns "8.8.8.8"
