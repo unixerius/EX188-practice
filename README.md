@@ -78,4 +78,6 @@ If you'd like my notes, which I took in 2023, they're in [Notes.md](./Notes.md).
 
 If you'd like some training to prepare for the exam, there are many vendors who offer a short and acceptable EX188 prep course. If you want my opinion, take a short subscription with O'Reilly Online (or do a trial) and use [Sander van Vugt's EX188 course](https://www.oreilly.com/videos/red-hat-certified/9780135335956/).
 
+You can also take a free month of LinkedIn Learning, [for the same course by Sander](https://www.linkedin.com/learning/red-hat-certified-specialist-in-containers-ex188-cert-prep).
+
 Would you like to do more practice tasks? The wonderful Lisenet has [a series of tasks for the old EX180 exam](https://www.lisenet.com/?s=ex180&submit=Search); you can skip all the OpenShift tasks. Lisenet also has a [great document with notes and practice tasks](https://github.com/lisenet/RHCA-study-notes/blob/master/EX180_study_notes.md).
