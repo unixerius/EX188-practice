@@ -12,7 +12,14 @@ I can't tell if they were made by the same person, or if one copied from another
 I will not include the original texts here, on the off chance that it was a stolen and real exam. 
 
 
+## Corrections
+
+Task 6 in the original practice exam refers to container image "centos:8". You should no longer use this, as the Yum/DNF mirrors it uses are offline. Instead, use "centos:9".
+
+
 # Walkthrough
+
+You will find my versions of the solutions inside the Solutions folder in this repository. 
 
 Ziyo Notes wrote a nice walkthrough that shows you how each assignment could be completed.
 

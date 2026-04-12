@@ -1,5 +1,5 @@
 # Edit this file to create an nginx webserver
-# Pull from centos:8
+# Pull from centos:9
 
 # Install nginx
 

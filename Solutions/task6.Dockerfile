@@ -1,13 +1,9 @@
 # Edit this file to create an nginx webserver
-# Pull from centos:8
-FROM centos:8
-
-# Extra fix needed, because the base URL for CentOS has changed.
-RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
-RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+# Pull from centos:9
+FROM centos:9
 
 # Install nginx
-RUN dnf clean all && dnf install -y nginx
+RUN dnf install -y nginx && dnf clean all
 
 # Publish port 80 to the outside world
 EXPOSE 80
