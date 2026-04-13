@@ -1,4 +1,4 @@
-# Use the centos 7 base image
+# Use the centos 9 base image
 
 # Add your maintainer info
 
@@ -10,10 +10,13 @@
 
 # Move skeeter.sh over to /skeeter.sh
 
-# Make skeeter.sh executable
+# Put mosquitto.conf into /etc/
+
+# Make skeeter.sh executable, make mosquitto.conf readable.
 
 # Allow connections to port 1883
 
 # Switch to the duffman user
 
 # Run the skeeter.sh script
+

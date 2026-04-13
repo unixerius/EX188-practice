@@ -16,6 +16,8 @@ I will not include the original texts here, on the off chance that it was a stol
 
 Task 6 in the original practice exam refers to container image "centos:8". You should no longer use this, as the Yum/DNF mirrors it uses are offline. Instead, use "centos:9".
 
+Ditto for task 7, which asks for "centos:7". Instead, use "centos:9". You will also need to add one additional file, which is mentioned in my Dockerfile but not in the original text.
+
 
 # Walkthrough
 
