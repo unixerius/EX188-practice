@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -n "duffman" > ~/mysql_user
+echo -n "duffman" > ~/mysql_user               # alternatively, use printf
 echo -n "saysoyeah" > ~/mysql_password
 echo -n "SQLp4ss" > ~/mysql_root_password
 echo -n "beer" > ~/mysql_database
@@ -17,3 +17,9 @@ podman run -d --name secretsdb \
         --secret mysql_root_password,type=env,target=MYSQL_ROOT_PASSWORD \
         --secret mysql_database,type=env,target=MYSQL_DATABASE \
         registry:5000/mariadb
+
+echo "show databases;" | mysql -uduffman -psaysoyeah -h workstation -p 3307
+
+mysql -uroot -pSQLp4ss -h workstation -p 3307 < /sql/beer.sql
+
+echo 'select * from types' | mysql -uduffman -psaysoyeah -h workstation -p 3307 beer

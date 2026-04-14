@@ -1,6 +1,6 @@
 # Introduction
 
-The original sample exam did not have questions for all topics on the 2023 EX188 exam. 
+The original sample exam did not have questions for all topics on the EX188 exam (2023 and later). 
 
 This document adds a few missing topics. 
 
@@ -9,7 +9,7 @@ This document adds a few missing topics.
 
 ## Task 8
 
-Use the MariaDB container from task 3. 
+This tasks builds on work you have already done in task 3.
 
 Refactor your configuration in such a way that you create four Podman secrets:
 
@@ -33,18 +33,21 @@ Once the container is up and running, prove that your settings are correctly app
 
 Connect to your database as the root user and check for the existence of the beer database:
 
-`echo "show databases;" | mysql -uduffman -h 0.0.0.0 -psaysoyeah -P 3307`
+`echo "show databases;" | mysql -uduffman -psaysoyeah -h workstation -p 3307`
 
 Run the command located in /sql/beer.sql to insert values into the database.
 
-`mysql -uroot -h 0.0.0.0 -pSQLp4ss -P 3307 < /sql/beer.sql`
+```
+mysql -uroot -pSQLp4ss -h workstation -p 3307 < /sql/beer.sql
+echo 'select * from types' | mysql -uduffman -psaysoyeah -h workstation -p 3307 beer
+```
 
 
 ## Task 9
 
 Create a Dockerfile which creates a container image with the following requirements. Store the Dockerfile as ~/task9.dockerfile.
 
-* Based on centos:7.
+* Based on centos:9.
 * During the build, create a user account.
 * "joe" must be the default user.
 * Read an argument during build-time to override the name "joe".
@@ -75,11 +78,21 @@ The Stack consists of five services:
 * Using the "postgres:9.4" image, named "db", in network "back-end", with volume "db-data" mounted on /var/postgres.
 * The Postgres container needs to have two environment variables: POSTGRES_USER and POSTGRES_PASSWORD, both set to "postgres". 
 * Using the "dockersamples/examplevotingapp_vote" image, named "vote", in networks "back-end" and in "front-end". 
-* The "vote" container exposes port 5000 on public port 5000. It depends on "redis". 
+* The "vote" container exposes port 80 on public port 5000. It depends on "redis". 
 * Using the "dockersamples/examplevotingapp_result" image, named "result", in networks "back-end" and in "front-end". 
-* The "vote" container exposes port 5001 on public port 5001. It depends on "db". 
+* The "vote" container exposes port 80 on public port 5001. It depends on "db". 
 * Using the "dockersamples/examplevotingapp_worker" image, named "worker", in networks "back-end" and "front-end". 
 * The "worker" container depends on both "db" and "redis". 
+
+
+# Task 11
+
+Coming very soon.
+
+
+# Task 12
+
+Coming very soon.
 
 
 # Do you want more?

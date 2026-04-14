@@ -1,7 +1,6 @@
 FROM centos:7
 
-ARG buildname
-ENV buildname=${buildname:-joe}
+ARG buildname=joe
 
 RUN useradd -m $buildname
 USER $buildname

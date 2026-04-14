@@ -1,24 +1,25 @@
 version: "3" 
 services:
 
+# For all services, use the image from docker.io.
 # Create a service called "redis", with image "redis", in network "back-end".
 
 
 # Create a service called "db", with image "postgres:9.4", in network "back-end". 
-# It needs a volume "db-data" on "/var/posgres". It also needs to environment variables:
+# It needs a volume "db-data" on "/var/postgres". It also needs to environment variables:
 # POSTGRES_USER=postgres and POSTGRES_PASSWORD=postgres 
 
 
 
 # Create a service called "vote" with the image "dockersamples/examplevotingapp_vote".
 # It should be in both "front-end" and "back-end" networks and depends on "redis". 
-# Expose port 5000 on port 5000.
+# Expose port 80 on port 5000.
 
 
 
 # Create a service called "result" with the image "dockersamples/examplevotingapp_result".
 # It should be in both "front-end" and "back-end" networks and depends on "db". 
-# Expose port 5001 on port 5001.
+# Expose port 80 on port 5001.
 
 
 
@@ -27,11 +28,12 @@ services:
 
 
 
+# Create two networks, "front-end" (of type bridge)  and "back-end" (of type internal). 
 networks:
 
-# Create two networks, "front-end" and "back-end". 
 
-
-volumes:
 
 # Create a volume called "db-data". 
+volumes:
+
+

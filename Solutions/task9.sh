@@ -1,10 +1,9 @@
 #!/bin/bash
 
 cat > task9.dockerfile << EOF
-FROM centos:7
+FROM centos:9
 
-ARG buildname
-ENV buildname=\${buildname:-joe}
+ARG buildname=joe
 
 RUN useradd -m \$buildname
 USER \$buildname
@@ -18,3 +17,4 @@ podman build --build-arg buildname=lisa -t hello-lisa:1.0 -f task9.dockerfile .
 
 podman run -ti --name joe hello-joe:1.0
 podman run -ti --name lisa hello-lisa:1.0
+
