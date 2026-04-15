@@ -94,7 +94,30 @@ Store the contents of /etc/os-release from the container image into ~/task11.txt
 
 # Task 12
 
+Create the directory ~/mywebsite/. In it, create a file index.html, with the contents "Welcome to my website."
+
+Download the official Apache httpd container. 
+
+Explore the official Apache httpd container to find the correct directory for the "document root" where the default index.html is stored.
+
+Run a container, based on this official Apache httpd container:
+
+* In detached mode, in the background.
+* With the name "mywebsite". 
+* Expose port 80 on port 8888.
+* Bind mount ~/mywebsite/ as the document root directory you found earlier.
+* Prove that the website works.
+
+
+# Task 13
+
 Coming very soon.
+
+
+# Task 14
+
+Coming very soon.
+
 
 
 # Do you want more?
