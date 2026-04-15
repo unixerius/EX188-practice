@@ -106,12 +106,21 @@ Run a container, based on this official Apache httpd container:
 * With the name "mywebsite". 
 * Expose port 80 on port 8888.
 * Bind mount ~/mywebsite/ as the document root directory you found earlier.
-* Prove that the website works.
+
+Prove that the website works.
 
 
 # Task 13
 
-Coming very soon.
+Download the official Apache httpd container. Run a container, based on this official Apache httpd container:
+
+* In detached mode, in the background.
+* With the name "runsalways". 
+* Expose port 80 on port 9999.
+* Ensure that the container will always restart; both if it gets killed and after a reboot. 
+* Do NOT create a Systemd service for the container, use an alternative method.
+
+Prove that the website works. Prove that it restarts if you kill the container. Prove that it restarts after a reboot.
 
 
 # Task 14
