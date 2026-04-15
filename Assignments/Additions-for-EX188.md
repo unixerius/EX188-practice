@@ -87,7 +87,9 @@ The Stack consists of five services:
 
 # Task 11
 
-Coming very soon.
+Mount the centos:9 container image on your host system. DO NOT run the container, mount it in your file system. 
+
+Store the contents of /etc/os-release from the container image into ~/task11.txt.
 
 
 # Task 12
