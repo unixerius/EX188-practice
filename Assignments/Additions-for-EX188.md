@@ -87,12 +87,46 @@ The Stack consists of five services:
 
 # Task 11
 
-Coming very soon.
+Mount the centos:9 container image on your host system. DO NOT run the container, mount it in your file system. 
+
+Store the contents of /etc/os-release from the container image into ~/task11.txt.
 
 
 # Task 12
 
+Create the directory ~/mywebsite/. In it, create a file index.html, with the contents "Welcome to my website."
+
+Download the official Apache httpd container. 
+
+Explore the official Apache httpd container to find the correct directory for the "document root" where the default index.html is stored.
+
+Run a container, based on this official Apache httpd container:
+
+* In detached mode, in the background.
+* With the name "mywebsite". 
+* Expose port 80 on port 8888.
+* Bind mount ~/mywebsite/ as the document root directory you found earlier.
+
+Prove that the website works.
+
+
+# Task 13
+
+Download the official Apache httpd container. Run a container, based on this official Apache httpd container:
+
+* In detached mode, in the background.
+* With the name "runsalways". 
+* Expose port 80 on port 9999.
+* Ensure that the container will always restart; both if it gets killed and after a reboot. 
+* Do NOT create a Systemd service for the container, use an alternative method.
+
+Prove that the website works. Prove that it restarts if you kill the container. Prove that it restarts after a reboot.
+
+
+# Task 14
+
 Coming very soon.
+
 
 
 # Do you want more?
