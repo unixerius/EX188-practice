@@ -137,7 +137,7 @@ In ~/echo, create a Dockerfile:
 
 Build a container tagged "echo:1.0" using this Dockerfile.
 
-Adjust file permissions, file ownership as well as SELinux file context on ~/echo/ and on ~/echo/echo.py, so user "app" in the container may run it. 
+Adjust file permissions, file ownership as well as SELinux file context on ~/echo/ and on ~/echo/udp_echo_server.py, so user "app" in the container may run it. 
 
 DO NOT USE podman-run's automatic method of fixing SELinux and permissions. Do it manually!
 
@@ -147,6 +147,7 @@ Run a container based on "echo:1.0":
 * With the name "echo". 
 * Exposing port 5000 on port 5000, for UDP traffic.
 * Bind mount ~/echo/ as /app.
+* Running /app/udp_echo_server.py.
 
 Prove that the container works by sending a string to port 5000 via UDP and then verifying the logs of container "echo".
 

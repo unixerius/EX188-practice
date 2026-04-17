@@ -28,11 +28,11 @@ ls -alZ ~/echo
 
 podman unshare <<EOF
 chown -R 1000:1000 ~/echo
-chmod 755 ~/echo/echo.py
+chmod 755 ~/echo/udp_echo_server.py
 exit
 EOF
 
-podman run --name echo -d -p 5000:5000/udp -v ./echo:/app echo:1.0 /app/echo.py
+podman run --name echo -d -p 5000:5000/udp -v ./echo:/app echo:1.0 /app/udp_echo_server.py
 
 bash -e echo "Hello." >/dev/udp/workstation/5000
 

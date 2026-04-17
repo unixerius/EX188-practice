@@ -81,3 +81,11 @@ If you'd like some training to prepare for the exam, there are many vendors who 
 You can also take a free month of LinkedIn Learning, [for the same course by Sander](https://www.linkedin.com/learning/red-hat-certified-specialist-in-containers-ex188-cert-prep).
 
 Would you like to do more practice tasks? The wonderful Lisenet has [a series of tasks for the old EX180 exam](https://www.lisenet.com/?s=ex180&submit=Search); you can skip all the OpenShift tasks. Lisenet also has a [great document with notes and practice tasks](https://github.com/lisenet/RHCA-study-notes/blob/master/EX180_study_notes.md).
+
+
+# Special thanks
+
+I'm very grateful to:
+
+- FWSquatch for making the original EX180 practice lab setup.
+- Nawaz Dhandala, for making his "udp_echo_server.py" available under Creative Commons license.
