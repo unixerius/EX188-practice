@@ -2,6 +2,8 @@
 # udp_echo_server.py - Basic UDP echo server
 # Original by Nawaz Dhandala, copied from:
 # https://oneuptime.com/blog/post/2026-03-20-build-udp-echo-server-python/view
+# Original licensed under Creative Commons International 4.0
+# See - https://github.com/OneUptime/blog/blob/master/LICENSE
 
 import socket
 import sys
