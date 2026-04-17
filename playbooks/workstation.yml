@@ -43,6 +43,7 @@
     loop:
       - /web
       - /sql
+      - /echo
 
   - name: Copying /web
     copy:
@@ -55,6 +56,11 @@
     copy:
       src: files/beer.sql
       dest: /sql/beer.sql
+
+  - name: Copying /echo
+    copy:
+      src: files/echo
+      dest: /
 
   - name: Copying /dockerfiles
     copy:

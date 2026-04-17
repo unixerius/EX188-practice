@@ -125,8 +125,32 @@ Prove that the website works. Prove that it restarts if you kill the container. 
 
 # Task 14
 
-Coming very soon.
+Copy the directory /echo into your home directory.
 
+Investigate the image "docker.io/library/python". Find the correct tag for the default "slim" version of the container based on Debian Trixie. Download this image.
+
+In ~/echo, create a Dockerfile:
+
+* Based on the Python image you found.
+* Which runs the command python3 in a way that it will accept an argument.
+* Where python3 runs as user "app" with uid:1000.
+
+Build a container tagged "echo:1.0" using this Dockerfile.
+
+Adjust file permissions, file ownership as well as SELinux file context on ~/echo/ and on ~/echo/echo.py, so user "app" in the container may run it. 
+
+DO NOT USE podman-run's automatic method of fixing SELinux and permissions. Do it manually!
+
+Run a container based on "echo:1.0":
+
+* In detached mode, in the background.
+* With the name "echo". 
+* Exposing port 5000 on port 5000, for UDP traffic.
+* Bind mount ~/echo/ as /app.
+
+Prove that the container works by sending a string to port 5000 via UDP and then verifying the logs of container "echo".
+
+To send text via UDP, you may use Bash with its network I/O redirection, via /dev/udp/workstation/5000.
 
 
 # Do you want more?
