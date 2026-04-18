@@ -1,4 +1,9 @@
 #!/bin/sh
+# Thanks again to Nawaz Dhandala. Thanks to them, I now learned that Python normally buffers output.
+# This makes it seem like there is no logging, if you run the container in daemonized form.
+# See: https://oneuptime.com/blog/post/2026-03-16-troubleshoot-missing-container-logs-podman/view
+
+sudo rm -rf ~/echo 2>/dev/null 
 
 Repo="docker.io/library/python"
 
@@ -14,6 +19,7 @@ cp -r /echo ~/
 cat >~/echo/Dockerfile <<EOF
 from ${Repo}:${ImageTag}
 
+ENV PYTHONUNBUFFERED=1
 RUN useradd -u 1000 -m app
 USER app
 
