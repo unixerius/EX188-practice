@@ -13,6 +13,9 @@ podman run -d \
         -e MYSQL_DATABASE="beer" \
         registry.do180.lab:5000/mariadb:latest
 
+echo "Waiting for MySQL startup."
+sleep 5
+
 echo "show databases;" | mysql -uduffman -psaysoyeah -h workstation
 
 mysql -uroot -pSQLp4ss -h workstation < /sql/beer.sql
