@@ -154,6 +154,30 @@ Prove that the container works by sending a string to port 5000 via UDP and then
 To send text via UDP, you may use Bash with its network I/O redirection, via /dev/udp/workstation/5000.
 
 
+# Task 15
+
+Technically speaking this isn't on the EX188 exam objectives, but let's do it anyway! Podman is all about pods, in'nit? This exercise was heavily inspired by chapter 4 of [Dan Walsh's Podman book](https://developers.redhat.com/e-books/podman-action).
+
+Copy the directory /peapod to ~/peapod/. Make sure that ~/peapod/pop.sh is executable.
+
+Create a pod:
+
+- With the name "peapod".
+- Which exposes port 80 on port 7777.
+- Which does a bind mount of ~/peapod onto /usr/local/apache2/htdocs.
+
+In the pod "peapod", create a container:
+
+- Running docker.io/library/httpd 
+
+In the pod "peapod", create a container:
+
+- Running quay.io/centos/centos:9
+- Which runs the script /usr/local/apache2/htdocs/pop.sh
+
+Start the pod. Verify that the website is available at http://workstation:7777. Verify that the page changes every 10 seconds. 
+
+
 # Do you want more?
 
 Would you like to do more practice tasks? The wonderful Lisenet has [a series of tasks for the old EX180 exam](https://www.lisenet.com/?s=ex180&submit=Search); you can skip all the OpenShift tasks. Lisenet also has a [great document with notes and practice tasks](https://github.com/lisenet/RHCA-study-notes/blob/master/EX180_study_notes.md).

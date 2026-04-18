@@ -9,14 +9,14 @@ The table below maps the objectives to practice tasks in this repository and in 
 
 | Objective                                | Assignments |
 |------------------------------------------|-------------|
-|Understand how to specify the container’s base image. | 6,7,9 | 
-|Understand how to add content to the container. | 6,7,9 | 
-|Understand how to configure the container’s run time environment including user id, working directory and running arbitrary commands. | 2,3,6,7,9 | 
-|Understand when and how to expose ports from a Containerfile. | 6,7 |
-|Understand how to pass environment variables and arguments to an image built from a Containerfile. | 3,9 |
-|Understand how to specify the command to be run in a custom image. | 6,7,9 |
-|Understand container volumes including sharing host data with the container. | 2 |
-|Understand the security and permissions requirements related to host and network access from the container. | n.a. |
+|Understand how to specify the container’s base image. | 6, 7, 9, 14 | 
+|Understand how to add content to the container. | 6, 7, 9, 14 | 
+|Understand how to configure the container’s run time environment including user id, working directory and running arbitrary commands. | 2, 3, 6, 7, 9, 14, 15 | 
+|Understand when and how to expose ports from a Containerfile. | 6, 7, 10, 12, 13, 14, 15 |
+|Understand how to pass environment variables and arguments to an image built from a Containerfile. | 3, 9 |
+|Understand how to specify the command to be run in a custom image. | 6, 7, 9, 14, 15 |
+|Understand container volumes including sharing host data with the container. | 2, 10, 12, 14, 15 |
+|Understand the security and permissions requirements related to host and network access from the container. | 10, 12, 14, 15 |
 |Understand container and image life cycles and how to manage them. | ALL |
 
 
@@ -24,9 +24,9 @@ The table below maps the objectives to practice tasks in this repository and in 
 
 | Objective                                | Assignments |
 |------------------------------------------|-------------|
-| Understand private registry security. | 1,5,6 |
+| Understand private registry security. | 1, 5, 6 |
 | Interact with many different registries. | ALL |
-| Understand and use image tags | 3,4,5,6 |
+| Understand and use image tags | ALL |
 | Push and pull images from and to registries. | ALL |
 | Back up an image with its layers and meta data vs. backup a container state. | 5 |
 
@@ -38,8 +38,8 @@ The table below maps the objectives to practice tasks in this repository and in 
 | Run containers locally using Podman | ALL |
 | Get container logs. | ALL |
 | Listen to container events on the container host. | n.a. |
-| Use Podman inspect. | n.a. |
-| Specifying environment parameters. | 3,8 |
+| Use Podman inspect. | ALL |
+| Specifying environment parameters. | 3, 8 |
 | Expose public applications. | ALL |
 | Get application logs. | ALL |
 | Inspect running applications. | ALL |
@@ -49,11 +49,11 @@ The table below maps the objectives to practice tasks in this repository and in 
 
 | Objective                                | Assignments |
 |------------------------------------------|-------------|
-| Create application stacks | 10 |
+| Create application stacks | 10, 15 |
 | Understand container dependencies | 10 |
-| Working with environment variables | 10 |
-| Working with secrets | n.a. |
-| Working with volumes | 10 |
+| Working with environment variables | 8, 10 |
+| Working with secrets | 8 |
+| Working with volumes | 10, 15 |
 | Working with configuration | 10 |
 
 
@@ -61,24 +61,25 @@ The table below maps the objectives to practice tasks in this repository and in 
 
 | Objective                                | Assignments |
 |------------------------------------------|-------------|
-| Understand the description of application resources | n.a. |
+| Understand the description of application resources | ALL |
 | Get application logs | ALL |
 | Inspect running applications | ALL |
-| Connecting to running containers | 3,5 |
+| Connecting to running containers | ALL |
 
 
 ## Not listed in the objectives, but important
 
 | Objective                                | Assignments |
 |------------------------------------------|-------------|
-| Installing Podman Compose | n.a. |
+| Installing Podman Compose | 1, 10 |
 | Deploy containers as a Systemd service. | 2 |
-| Defining a user service (as opposed to system/root) in Systemd. | n.a. |
+| Defining a user service (as opposed to system/root) in Systemd. | 2, 13 |
 | Use Skopeo to interact with image repositories. | 4 |
 | Working with secrets (without Compose). | 8 |
 | Passing arguments and settings during the Build phase. | 9 |
-| Using SEManage to set container_file_t context on files and volumes. | n.a. |
+| Using SEManage to set container_file_t context on files and volumes. | 14 |
 | Know how to operate the firewall, if external access is required. | n.a. |
+| Creating a pod with one, or more, containers. | 15 |
 
 
 # Notes from Red Hat
