@@ -32,9 +32,9 @@ chmod 755 ~/echo/udp_echo_server.py
 exit
 EOF
 
-podman run --name echo -d -p 5000:5000/udp -v ./echo:/app echo:1.0 /app/udp_echo_server.py
+podman run --name echo -d -p 5500:5000/udp -v ./echo:/app echo:1.0 /app/udp_echo_server.py
 
-bash -e echo "Hello." >/dev/udp/workstation/5000
+bash -e echo "Hello." >/dev/udp/workstation/5500
 
 podman logs echo 
 

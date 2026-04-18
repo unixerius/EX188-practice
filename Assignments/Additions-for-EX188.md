@@ -145,13 +145,13 @@ Run a container based on "echo:1.0":
 
 * In detached mode, in the background.
 * With the name "echo". 
-* Exposing port 5000 on port 5000, for UDP traffic.
+* Exposing port 5000 on port 5500, for UDP traffic.
 * Bind mount ~/echo/ as /app.
 * Running /app/udp_echo_server.py.
 
-Prove that the container works by sending a string to port 5000 via UDP and then verifying the logs of container "echo".
+Prove that the container works by sending a string to port 5500 via UDP and then verifying the logs of container "echo".
 
-To send text via UDP, you may use Bash with its network I/O redirection, via /dev/udp/workstation/5000.
+To send text via UDP, you may use Bash with its network I/O redirection, via /dev/udp/workstation/5500.
 
 
 # Task 15
