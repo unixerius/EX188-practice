@@ -24,7 +24,7 @@ ADD colors.tar /
 COPY skeeter.sh /skeeter.sh
 
 # Put mosquitto.conf into /etc/
-COPY mosquitto.conf /etc/mosquitto.conf
+COPY mosquitto.conf /etc/mosquitto/mosquitto.conf
 
 # Make skeeter.sh executable
 RUN chmod 755 /skeeter.sh && chmod 644 /etc/mosquitto.conf
@@ -36,7 +36,7 @@ EXPOSE 1883
 USER duffman
 
 # Run the skeeter.sh script
-ENTRYPOINT ["/skeeter.sh"]
+ENTRYPOINT [ "/skeeter.sh" ]
 EOF
 
 podman build -t skeeter:1.0 -f ./task7.dockerfile .
