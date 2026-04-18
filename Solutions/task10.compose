@@ -1,11 +1,11 @@
 version: "3" 
 services:
   redis:
-    image: redis
+    image: docker.io/library/redis
     networks:
       - back-end
   db:
-    image: postgres:9.4
+    image: docker.io/library/postgres:9.4
     networks:
       - back-end
     environment: 
@@ -14,7 +14,7 @@ services:
     volumes: 
       - db-data:/var/postgres
   vote:
-    image: dockersamples/examplevotingapp_vote
+    image: docker.io/dockersamples/examplevotingapp_vote
     networks:
       - front-end
       - back-end
@@ -23,7 +23,7 @@ services:
     ports:
       - "5000:80" 
   result:
-    image: dockersamples/examplevotingapp_result
+    image: docker.io/dockersamples/examplevotingapp_result
     networks:
       - front-end
       - back-end
@@ -32,7 +32,7 @@ services:
     ports:
       - "5001:80" 
   worker:
-    image: dockersamples/examplevotingapp_worker
+    image: docker.io/dockersamples/examplevotingapp_worker
     networks:
       - back-end
     depends_on:

@@ -15,3 +15,5 @@ sudo podman generate systemd reg-httpd | sudo tee -a /usr/lib/systemd/system/reg
 sudo systemctl daemon-reload
 sudo systemctl enable reg-httpd
 sudo systemctl restart reg-httpd
+
+sudo systemctl status reg-httpd

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mosquitto -c mosquitto.conf -d
+mosquitto -c /etc/mosquitto/mosquitto.conf -d
 
 while true; do
 	sleep 10

@@ -1,4 +1,9 @@
 #!/bin/sh
+# Thanks again to Nawaz Dhandala. Thanks to them, I now learned that Python normally buffers output.
+# This makes it seem like there is no logging, if you run the container in daemonized form.
+# See: https://oneuptime.com/blog/post/2026-03-16-troubleshoot-missing-container-logs-podman/view
+
+sudo rm -rf ~/echo 2>/dev/null 
 
 Repo="docker.io/library/python"
 
@@ -9,11 +14,12 @@ podman pull ${Repo}:${ImageTag}
 # Found by running: dnf whatprovides */semanage
 sudo dnf install -y policycoreutils-python-utils
 
-cp -r /echo ~/echo
+cp -r /echo ~/
 
 cat >~/echo/Dockerfile <<EOF
 from ${Repo}:${ImageTag}
 
+ENV PYTHONUNBUFFERED=1
 RUN useradd -u 1000 -m app
 USER app
 
@@ -32,9 +38,11 @@ chmod 755 ~/echo/udp_echo_server.py
 exit
 EOF
 
-podman run --name echo -d -p 5000:5000/udp -v ./echo:/app echo:1.0 /app/udp_echo_server.py
+podman run --name echo -d -p 5500:5000/udp -v ~/echo:/app echo:1.0 /app/udp_echo_server.py
 
-bash -e echo "Hello." >/dev/udp/workstation/5000
+echo "Hello." >/dev/udp/workstation/5500
 
+echo "You should see logs, that bytes were received. If not, then it didn't work."
 podman logs echo 
+
 

@@ -18,8 +18,14 @@ podman run -d --name secretsdb \
         --secret mysql_database,type=env,target=MYSQL_DATABASE \
         registry:5000/mariadb
 
-echo "show databases;" | mysql -uduffman -psaysoyeah -h workstation -p 3307
+echo "Waiting for MySQL to come online."
+sleep 5
 
-mysql -uroot -pSQLp4ss -h workstation -p 3307 < /sql/beer.sql
+echo "Showing DB"
+echo "show databases;" | mysql -uduffman -psaysoyeah -h workstation -P 3307
 
-echo 'select * from types' | mysql -uduffman -psaysoyeah -h workstation -p 3307 beer
+echo "Loading DB"
+mysql -uroot -pSQLp4ss -h workstation -P 3307 < /sql/beer.sql
+
+echo "Querying DB"
+echo 'select * from types' | mysql -uduffman -psaysoyeah -h workstation -P 3307 beer
