@@ -9,7 +9,7 @@ podman pull ${Repo}:${ImageTag}
 # Found by running: dnf whatprovides */semanage
 sudo dnf install -y policycoreutils-python-utils
 
-cp -r /echo ~/echo
+cp -r /echo ~/
 
 cat >~/echo/Dockerfile <<EOF
 from ${Repo}:${ImageTag}
@@ -36,5 +36,7 @@ podman run --name echo -d -p 5500:5000/udp -v ~/echo:/app echo:1.0 /app/udp_echo
 
 echo "Hello." >/dev/udp/workstation/5500
 
+echo "You should see logs, that bytes were received. If not, then it didn't work."
 podman logs echo 
+
 
