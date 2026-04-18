@@ -17,8 +17,13 @@ podman commit -a Tess alp-httpd registry.do180.lab:5000/httpd:twerks
 
 podman push registry.do180.lab:5000/httpd:twerks
 
+echo "Verifying the upload:"
+podman search httpd:twerks
+
 podman kill alp-httpd
 
 podman run -d --name tw-httpd \
         -p 8008:80 \
         registry.do180.lab:5000/httpd:twerks
+
+curl http://workstation:8008
