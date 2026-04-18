@@ -11,4 +11,12 @@ podman create --pod peapod --name pop quay.io/centos/centos:9 /usr/local/apache2
 
 podman pod start peapod
 
+echo "First check."
+curl http://workstation:7777
+
+sleep 10
+
+echo "Second check."
+curl http://workstation:7777
+
 
