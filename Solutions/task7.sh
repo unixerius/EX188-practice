@@ -15,7 +15,7 @@ MAINTAINER Tess Sluijter-Stek spam@spam.spam
 RUN useradd -m duffman
 
 # Install epel-release and mosquitto (epel-release must be installed first)
-RUN dnf install -y epel-release && dnf install -y mosquitto && dnf clean all
+RUN dnf install -y epel-release && dnf install -y mosquitto dos2unix && dnf clean all
 
 # Create the colors directory from colors.tar
 ADD colors.tar /
@@ -27,7 +27,7 @@ COPY skeeter.sh /skeeter.sh
 COPY mosquitto.conf /etc/mosquitto/mosquitto.conf
 
 # Make skeeter.sh executable
-RUN chmod 755 /skeeter.sh && chmod 644 /etc/mosquitto/mosquitto.conf
+RUN chmod 755 /skeeter.sh && dos2unix /skeeter.sh && chmod 644 /etc/mosquitto/mosquitto.conf
 
 # Allow connections to port 1883
 EXPOSE 1883

@@ -2,6 +2,7 @@
 
 cp -r /peapod ~/
 podman unshare chmod +x ~/peapod/pop.sh
+dos2unix ~/peapod/pop.sh
 
 podman pod create --name peapod -p 7777:80 -v ~/peapod:/usr/local/apache2/htdocs:z 
 

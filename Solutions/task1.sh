@@ -1,7 +1,7 @@
 #!/bin/sh
 
 sudo yum install -y podman epel-release
-sudo yum install -y podman-compose
+sudo yum install -y podman-compose dos2unix
 
 ConfigFile="/etc/containers/registries.conf"
 sudo cp ${ConfigFile} "${ConfigFile}.orig"
