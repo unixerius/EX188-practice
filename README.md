@@ -76,6 +76,8 @@ If you'd like my notes, which I took in 2023, they're in [Notes.md](./Notes.md).
 
 # Training
 
+If you'd like to read a book and follow along with solid labs and lots of examples, read [Dan Walsh's book](https://www.manning.com/books/podman-in-action). [RedHat offers it for free.](https://developers.redhat.com/e-books/podman-action)
+
 If you'd like some training to prepare for the exam, there are many vendors who offer a short and acceptable EX188 prep course. If you want my opinion, take a short subscription with O'Reilly Online (or do a trial) and use [Sander van Vugt's EX188 course](https://www.oreilly.com/videos/red-hat-certified/9780135335956/).
 
 You can also take a free month of LinkedIn Learning, [for the same course by Sander](https://www.linkedin.com/learning/red-hat-certified-specialist-in-containers-ex188-cert-prep).
@@ -89,3 +91,4 @@ I'm very grateful to:
 
 - FWSquatch for making the original EX180 practice lab setup.
 - Nawaz Dhandala, for making his "udp_echo_server.py" available under Creative Commons license.
+- Daniel Walsh, for writing [Podman in Action](https://www.manning.com/books/podman-in-action) and to RedHat for making that book [available for free](https://developers.redhat.com/e-books/podman-action).

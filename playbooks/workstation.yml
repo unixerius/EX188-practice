@@ -43,12 +43,11 @@
     loop:
       - /web
       - /sql
-      - /echo
 
   - name: Copying /web
     copy:
-      src: "{{ item }}"
-      dest: "/web/{{ item }}"
+      src: files/index.html
+      dest: /web/index.html
     loop:
       - index.html
 
@@ -60,6 +59,11 @@
   - name: Copying /echo
     copy:
       src: files/echo
+      dest: /
+
+  - name: Copying /peapod
+    copy:
+      src: files/peapod
       dest: /
 
   - name: Copying /dockerfiles
