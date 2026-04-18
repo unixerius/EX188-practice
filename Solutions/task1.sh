@@ -12,7 +12,7 @@ sudo tee -a ${ConfigFile} <<EOF
 
 [[registry]]
 location = "registry.do180.lab:5000"
-insecure = "true"
+insecure = true
 EOF
 
 podman search registry.do180.lab:5000/
