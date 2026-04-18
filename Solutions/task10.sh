@@ -1,6 +1,6 @@
 #!/bin/sh
 
-podman compose -d -f .\task10.compose up
+podman compose -f ./task10.compose up -d
 
 echo "Waiting until everything's started up properly."
 sleep 10
