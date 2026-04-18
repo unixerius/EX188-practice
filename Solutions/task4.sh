@@ -11,3 +11,5 @@ echo "Found tag: ${TAG}."
 podman run -d --name alp-httpd \
         -p 8008:80 \
         registry.do180.lab:5000/httpd:${TAG}
+
+curl http://workstation:8008
