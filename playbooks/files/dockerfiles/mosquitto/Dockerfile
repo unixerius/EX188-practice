@@ -10,7 +10,7 @@
 
 # Move skeeter.sh over to /skeeter.sh
 
-# Put mosquitto.conf into /etc/
+# Put mosquitto.conf into /etc/mosquitto/
 
 # Make skeeter.sh executable, make mosquitto.conf readable.
 
