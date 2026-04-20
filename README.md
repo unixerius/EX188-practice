@@ -1,9 +1,10 @@
 # Introduction
+
 This set of sample files started out as a direct clone of [the work by FWSquatch](https://github.com/FWSquatch/do180-practice). 
 
 Their last update to the project was in March of 2021, with the sample exam environment based on CentOS 7. 
 
-In this fork, I originally updated the environment to match the RHEL8-based EX188 exam. And per March 2026, I'm updating it for RHEL9.
+In this fork, I updated the environment to match the RHEL8-based EX188 exam. And per March 2026, I'm updating it for RHEL9.
 
 
 ## License
@@ -17,6 +18,13 @@ For my fork of the project, I have taken the liberty of applying CC-BY-NC-SA-4.0
 _Powered by Ansible and Vagrant_ 
 
 Using the files in this project, you can quickly build a lab environment to learn with [the original EX180 Practice Exam](./Assignments/Original-EX180.md). You can then complete your EX188 preparations by also doing [my added EX188 tasks](./Assignments/Additions-for-EX188.md).
+
+
+## Compatibility
+
+This lab was originally made only with x86_64 systems in mind.  For now, it cannot be used on MacOS systems with Apple's ARM processors.
+
+The Vagrant configuration files were written with VirtualBox in mind. With adjustments they will also work on Hyper-V, or another hypervisor.
 
 
 ## Installation
@@ -62,16 +70,9 @@ You can work with both VMs through SSH:
 3. Type "vagrant ssh registry", or "vagrant ssh workstation" to login to the workstation VM.
 
 
-## Compatibility
-
-This lab was originally made only with x86_64 systems in mind. 
-
-For now, it cannot yet be used on MacOS systems with Apple's ARM processors.
-
-
 # Study notes
 
-If you'd like my notes, which I took in 2023, they're in [Notes.md](./Notes.md).
+If you'd like my notes, they're in [Notes.md](./Notes.md). They have been updated for EX188 in 2026.
 
 
 # Training
