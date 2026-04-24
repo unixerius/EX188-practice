@@ -80,6 +80,7 @@ The table below maps the objectives to practice tasks in this repository and in 
 | Using SEManage to set container_file_t context on files and volumes. | 14 |
 | Know how to operate the firewall, if external access is required. | n.a. |
 | Creating a pod with one, or more, containers. | 15 |
+| Using Podlets for Systemd integration. | 16 |
 
 
 # Notes from Red Hat
@@ -90,10 +91,11 @@ During the exam you may be required to work with one or more pre-written applica
 
 # Not on the exam
 
-The accompanying training DO188 includes topics which are **not** on the EX188 exam. These topics include:
+The accompanying training DO188 includes topics which are **not** on the EX188 exam. Training topics not on the exam:
 
 * Red Hat OpenShift
 * Kubernetes
+* Podlets
 
 The exam website mentions that:
 

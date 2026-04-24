@@ -156,7 +156,9 @@ To send text via UDP, you may use Bash with its network I/O redirection, via /de
 
 # Task 15
 
-Technically speaking this isn't on the EX188 exam objectives, but let's do it anyway! Podman is all about pods, in'nit? This exercise was heavily inspired by chapter 4 of [Dan Walsh's Podman book](https://developers.redhat.com/e-books/podman-action).
+**This is not on the exam objectives.**
+
+Podman is all about pods, isn't it? This exercise was heavily inspired by chapter 4 of [Dan Walsh's Podman book](https://developers.redhat.com/e-books/podman-action).
 
 Copy the directory /peapod to ~/peapod/. Make sure that ~/peapod/pop.sh is executable.
 
@@ -176,6 +178,21 @@ In the pod "peapod", create a container:
 - Which runs the script /usr/local/apache2/htdocs/pop.sh
 
 Start the pod. Verify that the website is available at http://workstation:7777. Verify that the page changes every 10 seconds. 
+
+
+# Task 16
+
+**This is not on the exam objectives.**
+
+The desired end-result is a systemd user-service (non-root) which restarts always and starts at boot. DO NOT use `podman generate`, but use the modern quadlet-based solution.
+
+This container:
+- Runs docker.io/louislam/uptime-kuma.
+- Exposes port 3001 on host port 3001.
+- Creates a volume named "kuma-data" on `/app/data`.
+- Is named "kuma"
+
+Validate by visiting http://workstation:3001/dashboard 
 
 
 # Do you want more?
