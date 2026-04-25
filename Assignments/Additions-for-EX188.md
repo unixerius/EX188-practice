@@ -33,13 +33,13 @@ Once the container is up and running, prove that your settings are correctly app
 
 Connect to your database as the root user and check for the existence of the beer database:
 
-`echo "show databases;" | mysql -uduffman -psaysoyeah -h workstation -p 3307`
+`echo "show databases;" | mysql -uduffman -psaysoyeah -h workstation -P 3307`
 
 Run the command located in /sql/beer.sql to insert values into the database.
 
 ```
-mysql -uroot -pSQLp4ss -h workstation -p 3307 < /sql/beer.sql
-echo 'select * from types' | mysql -uduffman -psaysoyeah -h workstation -p 3307 beer
+mysql -uroot -pSQLp4ss -h workstation -P 3307 < /sql/beer.sql
+echo 'select * from types' | mysql -uduffman -psaysoyeah -h workstation -P 3307 beer
 ```
 
 
