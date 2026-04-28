@@ -47,11 +47,12 @@ Pull the latest version of the mariadb image from the registry on registry.do180
 -   MYSQL_PASSWORD: saysoyeah
 -   MYSQL_ROOT_PASSWORD: SQLp4ss
 -   MYSQL_DATABASE: beer
--   Connect to your database as the root user and check for the existence of the beer database:
+
+Connect to your database as the root user and check for the existence of the beer database:
 
     `echo “show databases;” | mysql -uduffman -h 192.168.88.4 -psaysoyeah`
 
--   Run the command located in /sql/beer.sql to insert values into the database.
+Run the command located in /sql/beer.sql to insert values into the database.
 
     `mysql -uroot -h 192.168.88.4 -pSQLp4ss < /sql/beer.sql`
 
@@ -93,7 +94,7 @@ Run a container in detached mode named duffman that publishes port 80 to 8989. T
 
 Use the incomplete files located in /dockerfiles/mosquitto/Dockerfile to create a new image. Use the comments in the Dockerfile to guide you through creating an image that meets the following requirements:
 
--   Use the centos 9 base image
+-   Use the almalinux:9 base image
 -   Add your maintainer info
 -   Create a user named duffman
 -   Install epel-release and mosquitto (epel-release must be installed first)

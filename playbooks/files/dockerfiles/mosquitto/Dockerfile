@@ -1,4 +1,4 @@
-# Use the centos 9 base image
+# Use the almalinux:9 base image
 
 # Add your maintainer info
 

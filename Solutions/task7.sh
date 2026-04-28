@@ -5,8 +5,8 @@ cp /dockerfiles/mosquitto/skeeter.sh .
 cp /dockerfiles/mosquitto/mosquitto.conf .
 
 cat > ./task7.dockerfile << EOF
-# Use the centos 9 base image
-FROM centos:9
+# Use the almalinux:9 base image
+FROM docker.io/library/almalinux:9
 
 # Add your maintainer info
 MAINTAINER Tess Sluijter-Stek spam@spam.spam
