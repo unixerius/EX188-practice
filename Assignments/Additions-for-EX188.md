@@ -1,8 +1,12 @@
 # Introduction
 
-The original sample exam did not have questions for all topics on the EX188 exam (2023 and later). 
+[The original sample exam](./Origina-EX180.md) did not have questions for all topics on the EX188 exam (2023 and later). 
 
-This document adds a few missing topics. 
+This document adds a number of the missing topics. 
+
+I created these assignments myself, taking inspiration here and there from books or tutorials. Where relevant, I have provided a link to the source of my inspiration.
+
+You will find my versions of the solutions inside [the Solutions folder](../Solutions/) in this repository. 
 
 
 # Extra tasks
