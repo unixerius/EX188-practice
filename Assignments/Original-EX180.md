@@ -79,7 +79,7 @@ Do the following with your newly created alp-httpd container:
 
 Use the incomplete file located at /dockerfiles/nginx/Dockerfile to create a new image. It must meet these requirements:
 
--   Pull from centos:9
+-   Pull from almalinux:9
 -   Install nginx
 -   Publish port 80 to the outside world
 -   Copy index.html and duffman.png into /usr/share/nginx/html directory
