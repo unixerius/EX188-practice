@@ -14,9 +14,9 @@ The original exam does not cover all the EX188 objectives. In this repository yo
 
 ## Walkthrough
 
-You will find my versions of the solutions inside the Solutions folder in this repository. 
+You will find my versions of the solutions inside [the Solutions folder](../Solutions/) in this repository. 
 
-Ziyo Notes wrote a nice walkthrough that shows you how each assignment could be completed.
+[Ziyo Notes wrote a nice walkthrough](https://ziyonotes.uz/ex180-sample) that shows you how each assignment could be completed.
 
 
 # EX180 Practice Exam
