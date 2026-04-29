@@ -51,7 +51,7 @@ echo 'select * from types' | mysql -uduffman -psaysoyeah -h workstation -P 3307 
 
 Create a Dockerfile which creates a container image with the following requirements. Store the Dockerfile as ~/task9.dockerfile.
 
-* Based on centos:9.
+* Based on almalinux:9.
 * During the build, create a user account.
 * "joe" must be the default user.
 * Read an argument during build-time to override the name "joe".
@@ -91,7 +91,7 @@ The Stack consists of five services:
 
 # Task 11
 
-Mount the centos:9 container image on your host system. DO NOT run the container, mount it in your file system. 
+Mount the almalinux:9 container image on your host system. DO NOT run the container, mount it in your file system. 
 
 Store the contents of /etc/os-release from the container image into ~/task11.txt.
 
@@ -178,7 +178,7 @@ In the pod "peapod", create a container:
 
 In the pod "peapod", create a container:
 
-- Running quay.io/centos/centos:9
+- Running docker.io/library/almalinux:9
 - Which runs the script /usr/local/apache2/htdocs/pop.sh
 
 Start the pod. Verify that the website is available at http://workstation:7777. Verify that the page changes every 10 seconds. 

@@ -8,7 +8,7 @@ podman pod create --name peapod -p 7777:80 -v ~/peapod:/usr/local/apache2/htdocs
 
 podman create --pod peapod --name httpd docker.io/library/httpd
 
-podman create --pod peapod --name pop quay.io/centos/centos:9 /usr/local/apache2/htdocs/pop.sh
+podman create --pod peapod --name pop docker.io/library/almalinux:9 /usr/local/apache2/htdocs/pop.sh
 
 podman pod start peapod
 
