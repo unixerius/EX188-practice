@@ -5,6 +5,29 @@
 The table below maps the objectives to practice tasks in this repository and in the original EX180 practice test.
 
 
+# Notes from Red Hat
+As with all Red Hat performance-based exams, configurations must persist after reboot without intervention.
+
+During the exam you may be required to work with one or more pre-written applications. You will not be required to modify application code however in some cases you may need to utilize supplied documentation in order to produce a new deployment of a given application.
+
+
+## Training topics n on the exam
+
+The accompanying training DO188 includes topics which are **not** on the EX188 exam. Training topics not on the exam:
+
+* Red Hat OpenShift
+* Kubernetes
+* Podlets
+
+The exam website mentions that:
+
+> "This exam is based on RHEL9, podman v4.4 and OCP v4.14 [...]"
+
+But the *exam objectives have no mention* at all of OCP (OpenShift Container Platform).
+
+
+# The objectives in the practice test
+
 ## Implement images using Podman and Containerfile
 
 | Objective                                | Assignments |
@@ -82,24 +105,4 @@ The table below maps the objectives to practice tasks in this repository and in 
 | Creating a pod with one, or more, containers. | 15 |
 | Using Podlets for Systemd integration. | 16 |
 
-
-# Notes from Red Hat
-As with all Red Hat performance-based exams, configurations must persist after reboot without intervention.
-
-During the exam you may be required to work with one or more pre-written applications. You will not be required to modify application code however in some cases you may need to utilize supplied documentation in order to produce a new deployment of a given application.
-
-
-# Not on the exam
-
-The accompanying training DO188 includes topics which are **not** on the EX188 exam. Training topics not on the exam:
-
-* Red Hat OpenShift
-* Kubernetes
-* Podlets
-
-The exam website mentions that:
-
-> "This exam is based on RHEL9, podman v4.4 and OCP v4.14 [...]"
-
-But the exam objectives have no mention at all of OCP (OpenShift Container Platform).
 

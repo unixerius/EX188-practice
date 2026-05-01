@@ -43,9 +43,11 @@ podman build -t skeeter:1.0 -f ./task7.dockerfile .
 
 rm colors.tar skeeter.sh mosquitto.conf
 
-podman run -d --name mosquitto-1 \
-        -p 11883:1883 \
-        skeeter:1.0
+podman run -d \
+    --name mosquitto-1 \
+    --restart always \
+    -p 11883:1883 \
+    skeeter:1.0
 
 echo "Now starting test...Stop with ctrl-C."
 

@@ -38,7 +38,12 @@ chmod 755 ~/echo/udp_echo_server.py
 exit
 EOF
 
-podman run --name echo -d -p 5500:5000/udp -v ~/echo:/app echo:1.0 /app/udp_echo_server.py
+podman run -d \
+    --name echo \
+    --restart always \
+    -p 5500:5000/udp \
+    -v ~/echo:/app echo:1.0 \
+    /app/udp_echo_server.py
 
 echo "Hello." >/dev/udp/workstation/5500
 

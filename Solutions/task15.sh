@@ -4,11 +4,22 @@ cp -r /peapod ~/
 podman unshare chmod +x ~/peapod/pop.sh
 dos2unix ~/peapod/pop.sh
 
-podman pod create --name peapod -p 7777:80 -v ~/peapod:/usr/local/apache2/htdocs:z 
+podman pod create \
+    --name peapod \
+    -p 7777:80 \
+    -v ~/peapod:/usr/local/apache2/htdocs:z 
 
-podman create --pod peapod --name httpd docker.io/library/httpd
+podman create \
+    --name httpd \
+    --restart always \
+    --pod peapod \
+    docker.io/library/httpd
 
-podman create --pod peapod --name pop docker.io/library/almalinux:9 /usr/local/apache2/htdocs/pop.sh
+podman create \
+    --name pop \
+    --restart always \
+    --pod peapod \
+    docker.io/library/almalinux:9 /usr/local/apache2/htdocs/pop.sh
 
 podman pod start peapod
 
