@@ -8,9 +8,9 @@ sudo systemctl enable podman-restart
 sudo systemctl start podman-restart
 
 mkdir task10
-mv task10.compose task10/Container-compose.yml
+cp task10.compose task10/Container-compose.yml
 cd task10
-podman compose -f ./task10.compose up -d
+podman compose -f ./Container-compose.yml up -d
 cd ..
 
 echo "Waiting until everything's started up properly."
