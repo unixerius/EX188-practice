@@ -9,7 +9,7 @@ sudo systemctl start podman-restart
 
 cp -r /dockerfiles/mosquitto/ ~/mosquitto
 
-cat > ~/mosquitto/task7.dockerfile << EOF
+cat > ~/mosquitto/Dockerfile << EOF
 # Use the almalinux:9 base image
 FROM docker.io/library/almalinux:9
 
@@ -44,7 +44,7 @@ USER duffman
 ENTRYPOINT [ "/skeeter.sh" ]
 EOF
 
-podman build -t skeeter:1.0 -f ~/nginx/task7/dockerfile ~/nginx
+podman build -t skeeter:1.0 -f ~/task7/Dockerfile ~/task7
 
 podman run -d \
     --name mosquitto-1 \

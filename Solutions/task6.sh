@@ -7,9 +7,9 @@ systemctl --user start podman-restart
 sudo systemctl enable podman-restart
 sudo systemctl start podman-restart
 
-cp -r /dockerfiles/nginx ~/nginx
+cp -r /dockerfiles/nginx ~/task6
 
-cat > ~/nginx/task6.dockerfile << EOF
+cat > ~/task6/Dockerfile << EOF
 # Edit this file to create an nginx webserver
 # Pull from almalinux:9
 FROM docker.io/library/almalinux:9
@@ -29,7 +29,7 @@ ENTRYPOINT ["/usr/sbin/nginx"]
 CMD ["-g", "daemon off;"]
 EOF
 
-podman build -f ~/nginx/task6.dockerfile -t registry.do180.lab:5000/duff-nginx:1.0 ~/nginx
+podman build -f ~/task6/Dockerfile -t registry.do180.lab:5000/duff-nginx:1.0 ~/task6
 
 podman push registry.do180.lab:5000/duff-nginx:1.0
 
