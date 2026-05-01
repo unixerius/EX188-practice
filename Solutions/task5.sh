@@ -1,5 +1,12 @@
 #!/bin/sh
 
+# Needed to ensure that containers come up after a reboot.
+sudo loginctl enable-linger $(whoami)
+systemctl --user enable podman-restart
+systemctl --user start podman-restart
+sudo systemctl enable podman-restart
+sudo systemctl start podman-restart
+
 podman exec -ti alp-httpd /bin/sh << EOF
 echo "Before:"
 cat /usr/local/apache2/htdocs/index.html
@@ -28,5 +35,6 @@ podman run -d \
     -p 8008:80 \
     registry.do180.lab:5000/httpd:twerks
 
+sleep 2
 curl http://workstation:8008
 

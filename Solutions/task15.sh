@@ -1,5 +1,12 @@
 #!/bin/sh
 
+# Needed to ensure that containers come up after a reboot.
+sudo loginctl enable-linger $(whoami)
+systemctl --user enable podman-restart
+systemctl --user start podman-restart
+sudo systemctl enable podman-restart
+sudo systemctl start podman-restart
+
 cp -r /peapod ~/
 podman unshare chmod +x ~/peapod/pop.sh
 dos2unix ~/peapod/pop.sh
@@ -23,6 +30,7 @@ podman create \
 
 podman pod start peapod
 
+sleep 2
 echo "First check."
 curl http://workstation:7777
 

@@ -22,3 +22,9 @@ EOF
 
 podman search registry.do180.lab:5000/
 
+sudo loginctl enable-linger $(whoami)
+systemctl --user enable podman-restart
+systemctl --user start podman-restart
+sudo systemctl enable podman-restart
+sudo systemctl start podman-restart
+

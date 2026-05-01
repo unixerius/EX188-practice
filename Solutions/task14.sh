@@ -3,7 +3,14 @@
 # This makes it seem like there is no logging, if you run the container in daemonized form.
 # See: https://oneuptime.com/blog/post/2026-03-16-troubleshoot-missing-container-logs-podman/view
 
-sudo rm -rf ~/echo 2>/dev/null 
+# Needed to ensure that containers come up after a reboot.
+sudo loginctl enable-linger $(whoami)
+systemctl --user enable podman-restart
+systemctl --user start podman-restart
+sudo systemctl enable podman-restart
+sudo systemctl start podman-restart
+
+sudo rm -rf ~/echo/ 2>/dev/null 
 
 Repo="docker.io/library/python"
 
@@ -45,6 +52,7 @@ podman run -d \
     -v ~/echo:/app echo:1.0 \
     /app/udp_echo_server.py
 
+sleep 2
 echo "Hello." >/dev/udp/workstation/5500
 
 echo "You should see logs, that bytes were received. If not, then it didn't work."

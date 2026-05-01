@@ -1,5 +1,12 @@
 #!/bin/sh
 
+# Needed to ensure that containers come up after a reboot.
+sudo loginctl enable-linger $(whoami)
+systemctl --user enable podman-restart
+systemctl --user start podman-restart
+sudo systemctl enable podman-restart
+sudo systemctl start podman-restart
+
 mkdir ${HOME}/mywebsite
 echo "Welcome to my website." > ${HOME}/mywebsite/index.html
 
@@ -18,5 +25,6 @@ podman run -d \
     -v ${HOME}/mywebsite:${DocRoot}:Z \
     ${HttpdImage}
 
+sleep 2
 curl http://workstation:8888
 

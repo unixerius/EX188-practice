@@ -1,10 +1,15 @@
 #!/bin/bash
 
-cp /dockerfiles/mosquitto/colors.tar .
-cp /dockerfiles/mosquitto/skeeter.sh .
-cp /dockerfiles/mosquitto/mosquitto.conf .
+# Needed to ensure that containers come up after a reboot.
+sudo loginctl enable-linger $(whoami)
+systemctl --user enable podman-restart
+systemctl --user start podman-restart
+sudo systemctl enable podman-restart
+sudo systemctl start podman-restart
 
-cat > ./task7.dockerfile << EOF
+cp -r /dockerfiles/mosquitto/ ~/mosquitto
+
+cat > ~/mosquitto/Dockerfile << EOF
 # Use the almalinux:9 base image
 FROM docker.io/library/almalinux:9
 
@@ -39,9 +44,7 @@ USER duffman
 ENTRYPOINT [ "/skeeter.sh" ]
 EOF
 
-podman build -t skeeter:1.0 -f ./task7.dockerfile .
-
-rm colors.tar skeeter.sh mosquitto.conf
+podman build -t skeeter:1.0 -f ~/mosquitto/Dockerfile ~/mosquitto
 
 podman run -d \
     --name mosquitto-1 \
@@ -49,7 +52,7 @@ podman run -d \
     -p 11883:1883 \
     skeeter:1.0
 
+sleep 2
 echo "Now starting test...Stop with ctrl-C."
-
 mosquitto_sub -h 127.0.0.1 -p 11883 -t "#"
 

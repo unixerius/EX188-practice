@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Needed to ensure that containers come up after a reboot.
+sudo loginctl enable-linger $(whoami)
+systemctl --user enable podman-restart
+systemctl --user start podman-restart
+sudo systemctl enable podman-restart
+sudo systemctl start podman-restart
+
 echo -n "duffman" > ~/mysql_user               # alternatively, use printf
 echo -n "saysoyeah" > ~/mysql_password
 echo -n "SQLp4ss" > ~/mysql_root_password
@@ -21,7 +28,7 @@ podman run -d \
     registry:5000/mariadb
 
 echo "Waiting for MySQL to come online."
-sleep 5
+sleep 10
 
 echo "Showing DB"
 echo "show databases;" | mysql -uduffman -psaysoyeah -h workstation -P 3307

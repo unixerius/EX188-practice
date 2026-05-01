@@ -1,8 +1,15 @@
 #!/bin/bash
 
-cp /dockerfiles/nginx/* .
+# Needed to ensure that containers come up after a reboot.
+sudo loginctl enable-linger $(whoami)
+systemctl --user enable podman-restart
+systemctl --user start podman-restart
+sudo systemctl enable podman-restart
+sudo systemctl start podman-restart
 
-cat > ./task6.dockerfile << EOF
+cp -r /dockerfiles/nginx ~/task6
+
+cat > ~/task6/Dockerfile << EOF
 # Edit this file to create an nginx webserver
 # Pull from almalinux:9
 FROM docker.io/library/almalinux:9
@@ -22,9 +29,7 @@ ENTRYPOINT ["/usr/sbin/nginx"]
 CMD ["-g", "daemon off;"]
 EOF
 
-podman build -f ./task6.dockerfile -t registry.do180.lab:5000/duff-nginx:1.0 .
-
-rm Dockerfile index.html duffman.png
+podman build -f ~/task6/Dockerfile -t registry.do180.lab:5000/duff-nginx:1.0 ~/task6
 
 podman push registry.do180.lab:5000/duff-nginx:1.0
 
@@ -34,4 +39,5 @@ podman run -d \
     -p 8989:80 \
     registry.do180.lab:5000/duff-nginx:1.0
 
+sleep 2
 curl http://localhost:8989

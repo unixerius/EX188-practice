@@ -1,5 +1,12 @@
 #!/bin/sh
 
+# Needed to ensure that containers come up after a reboot.
+sudo loginctl enable-linger $(whoami)
+systemctl --user enable podman-restart
+systemctl --user start podman-restart
+sudo systemctl enable podman-restart
+sudo systemctl start podman-restart
+
 skopeo list-tags docker://registry.do180.lab:5000/httpd
 
 sudo podman pull registry.do180.lab:5000/httpd:latest
@@ -18,3 +25,6 @@ sudo systemctl enable reg-httpd
 sudo systemctl restart reg-httpd
 
 sudo systemctl status reg-httpd
+
+sleep 5
+curl http://localhost:8080
