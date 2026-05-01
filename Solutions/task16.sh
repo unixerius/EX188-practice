@@ -10,7 +10,9 @@ sudo systemctl enable podman-restart
 sudo systemctl start podman-restart
 
 ConfigDir="$HOME/.config/containers/systemd"
-mkdir -p ${ConfigDir}
+mkdir -p ${ConfigDir} 2>/dev/null
+rm ${ConfigDir}/kuma.container 2>/dev/null
+systemctl --user daemon-reload
 
 cat > ${ConfigDir}/kuma.container << EOF
 [Container]
