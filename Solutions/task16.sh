@@ -2,7 +2,12 @@
 # Heavily inspired by https://giacomo.coletto.io/blog/podman-quadlets/
 #
 
-sudo loginctl enable-linger $(whoami) 
+# Needed to ensure that containers come up after a reboot.
+sudo loginctl enable-linger $(whoami)
+sudo systemctl --user enable podman-restart
+sudo systemctl --user start podman-restart
+sudo systemctl enable podman-restart
+sudo systemctl start podman-restart
 
 ConfigDir="$HOME/.config/containers/systemd"
 mkdir -p ${ConfigDir}

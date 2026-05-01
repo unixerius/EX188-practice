@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Needed to ensure that containers come up after a reboot.
+sudo loginctl enable-linger $(whoami)
+sudo systemctl --user enable podman-restart
+sudo systemctl --user start podman-restart
+sudo systemctl enable podman-restart
+sudo systemctl start podman-restart
+
 echo -n "duffman" > ~/mysql_user               # alternatively, use printf
 echo -n "saysoyeah" > ~/mysql_password
 echo -n "SQLp4ss" > ~/mysql_root_password

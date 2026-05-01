@@ -1,5 +1,12 @@
 #!/bin/sh
 
+# Needed to ensure that containers come up after a reboot.
+sudo loginctl enable-linger $(whoami)
+sudo systemctl --user enable podman-restart
+sudo systemctl --user start podman-restart
+sudo systemctl enable podman-restart
+sudo systemctl start podman-restart
+
 podman compose -f ./task10.compose up -d
 
 echo "Waiting until everything's started up properly."
@@ -12,3 +19,4 @@ curl http://workstation:5000
 sudo dnf install -y lynx
 
 echo "Cast a vote and test, by visiting http://workstation:5000 with the Lynx browser."
+

@@ -3,7 +3,14 @@
 # This makes it seem like there is no logging, if you run the container in daemonized form.
 # See: https://oneuptime.com/blog/post/2026-03-16-troubleshoot-missing-container-logs-podman/view
 
-sudo rm -rf ~/echo 2>/dev/null 
+# Needed to ensure that containers come up after a reboot.
+sudo loginctl enable-linger $(whoami)
+sudo systemctl --user enable podman-restart
+sudo systemctl --user start podman-restart
+sudo systemctl enable podman-restart
+sudo systemctl start podman-restart
+
+sudo rm -rf ~/echo/ 2>/dev/null 
 
 Repo="docker.io/library/python"
 
