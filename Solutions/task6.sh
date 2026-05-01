@@ -31,8 +31,6 @@ EOF
 
 podman build -f ~/nginx/task6.dockerfile -t registry.do180.lab:5000/duff-nginx:1.0 ~/nginx
 
-rm Dockerfile index.html duffman.png
-
 podman push registry.do180.lab:5000/duff-nginx:1.0
 
 podman run -d \
