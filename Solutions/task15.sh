@@ -30,6 +30,7 @@ podman create \
 
 podman pod start peapod
 
+sleep 2
 echo "First check."
 curl http://workstation:7777
 

@@ -25,3 +25,6 @@ sudo systemctl enable reg-httpd
 sudo systemctl restart reg-httpd
 
 sudo systemctl status reg-httpd
+
+sleep 5
+curl http://localhost:8080

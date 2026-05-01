@@ -54,7 +54,7 @@ podman run -d \
     -p 11883:1883 \
     skeeter:1.0
 
+sleep 2
 echo "Now starting test...Stop with ctrl-C."
-
 mosquitto_sub -h 127.0.0.1 -p 11883 -t "#"
 

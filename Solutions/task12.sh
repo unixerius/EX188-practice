@@ -25,5 +25,6 @@ podman run -d \
     -v ${HOME}/mywebsite:${DocRoot}:Z \
     ${HttpdImage}
 
+sleep 2
 curl http://workstation:8888
 

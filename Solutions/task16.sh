@@ -30,6 +30,7 @@ systemctl --user daemon-reload
 systemctl --user list-unit-files | grep kuma
 systemctl --user start kuma
 
+sleep 5
 curl http://workstation:3001
 curl http://workstation:3001/dashboard
 

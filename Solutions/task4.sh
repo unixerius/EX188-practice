@@ -21,4 +21,5 @@ podman run -d \
     -p 8008:80 \
     registry.do180.lab:5000/httpd:${TAG}
 
+sleep 2
 curl http://workstation:8008

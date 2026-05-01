@@ -41,4 +41,5 @@ podman run -d \
     -p 8989:80 \
     registry.do180.lab:5000/duff-nginx:1.0
 
+sleep 2
 curl http://localhost:8989

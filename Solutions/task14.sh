@@ -52,6 +52,7 @@ podman run -d \
     -v ~/echo:/app echo:1.0 \
     /app/udp_echo_server.py
 
+sleep 2
 echo "Hello." >/dev/udp/workstation/5500
 
 echo "You should see logs, that bytes were received. If not, then it didn't work."

@@ -17,10 +17,12 @@ podman run -d \
     -p 9999:80 \
     ${HttpdImage}
 
+sleep 2
 curl http://localhost:9999
 
 kill $(podman ps --format "{{.Pid}}" --filter name=runsalways)
 
+sleep 3
 curl http://localhost:9999
 
 echo "Now reboot the workstation VM and prove that the container runs."

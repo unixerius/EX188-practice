@@ -22,7 +22,7 @@ podman run -d \
     registry.do180.lab:5000/mariadb:latest
 
 echo "Waiting for MySQL startup."
-sleep 5
+sleep 10
 
 echo "Showing DB"
 echo "show databases;" | mysql -uduffman -psaysoyeah -h workstation

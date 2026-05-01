@@ -28,7 +28,7 @@ podman run -d \
     registry:5000/mariadb
 
 echo "Waiting for MySQL to come online."
-sleep 5
+sleep 10
 
 echo "Showing DB"
 echo "show databases;" | mysql -uduffman -psaysoyeah -h workstation -P 3307
