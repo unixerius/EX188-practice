@@ -44,7 +44,7 @@ USER duffman
 ENTRYPOINT [ "/skeeter.sh" ]
 EOF
 
-podman build -t skeeter:1.0 -f ~/task7/Dockerfile ~/task7
+podman build -t skeeter:1.0 -f ~/mosquitto/Dockerfile ~/mosquitto
 
 podman run -d \
     --name mosquitto-1 \
