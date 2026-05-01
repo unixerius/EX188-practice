@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cat > task9.dockerfile << EOF
-FROM centos:9
+FROM docker.io/library/almalinux:9
 
 ARG buildname=joe
 

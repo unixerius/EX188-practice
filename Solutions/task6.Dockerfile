@@ -1,6 +1,6 @@
 # Edit this file to create an nginx webserver
-# Pull from centos:9
-FROM centos:9
+# Pull from almalinux:9
+FROM docker.io/library/almalinux:9
 
 # Install nginx
 RUN dnf install -y nginx && dnf clean all

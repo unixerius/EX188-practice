@@ -49,17 +49,6 @@ The first time you run the "vagrant up" command, it will download the OS images 
 - workstation.do180.lab
 
 
-## System Details:
-> workstation
-- 192.168.88.4
-- Gateway - 192.168.88.1
-- DNS - 8.8.8.8
-> registry
-- 192.168.88.5
-- Gateway - 192.168.88.1
-- DNS - 8.8.8.8
-
-
 ## Accessing the systems
 
 You can work with both VMs through SSH: 
@@ -67,7 +56,7 @@ You can work with both VMs through SSH:
 1. Open a terminal window on your host OS.
 2. "cd" into this Git repository.
 3. Type "vagrant up" and wait for the VMs to be ready.
-3. Type "vagrant ssh registry", or "vagrant ssh workstation" to login to the workstation VM.
+3. Type "vagrant ssh workstation" to login to the workstation VM.
 
 
 # Study notes

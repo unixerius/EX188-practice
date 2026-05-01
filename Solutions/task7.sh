@@ -5,8 +5,8 @@ cp /dockerfiles/mosquitto/skeeter.sh .
 cp /dockerfiles/mosquitto/mosquitto.conf .
 
 cat > ./task7.dockerfile << EOF
-# Use the centos 9 base image
-FROM centos:9
+# Use the almalinux:9 base image
+FROM docker.io/library/almalinux:9
 
 # Add your maintainer info
 MAINTAINER Tess Sluijter-Stek spam@spam.spam
@@ -43,9 +43,11 @@ podman build -t skeeter:1.0 -f ./task7.dockerfile .
 
 rm colors.tar skeeter.sh mosquitto.conf
 
-podman run -d --name mosquitto-1 \
-        -p 11883:1883 \
-        skeeter:1.0
+podman run -d \
+    --name mosquitto-1 \
+    --restart always \
+    -p 11883:1883 \
+    skeeter:1.0
 
 echo "Now starting test...Stop with ctrl-C."
 

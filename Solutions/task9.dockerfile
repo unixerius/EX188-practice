@@ -1,4 +1,4 @@
-FROM centos:7
+FROM docker.io/library/almalinux:9
 
 ARG buildname=joe
 
