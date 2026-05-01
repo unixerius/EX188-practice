@@ -13,7 +13,7 @@ The table below maps the objectives to practice tasks in this repository and in 
 During the exam you may be required to work with one or more pre-written applications. You will not be required to modify application code however in some cases you may need to utilize supplied documentation in order to produce a new deployment of a given application.
 
 
-## Training topics n on the exam
+## Training topics not on the exam
 
 The accompanying training DO188 includes topics which are **not** on the EX188 exam. Training topics not on the exam:
 
