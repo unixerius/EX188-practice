@@ -11,6 +11,9 @@ You will find my versions of the solutions inside [the Solutions folder](../Solu
 
 # Extra tasks
 
+> [!WARNING]
+> As with all Red Hat performance-based exams, configurations must persist after reboot without intervention. Even if you do not have root, or sudo access.
+
 ## Task 8
 
 This tasks builds on work you have already done in task 3.

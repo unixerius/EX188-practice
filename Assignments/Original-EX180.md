@@ -21,6 +21,9 @@ You will find my versions of the solutions inside [the Solutions folder](../Solu
 
 # EX180 Practice Exam
 
+> [!WARNING]
+> As with all Red Hat performance-based exams, configurations must persist after reboot without intervention. Even if you do not have root, or sudo access.
+
 ## Task 1
 
 Install podman on the workstation machine and add registry:5000 as an insecure registry. Also make sure that podman searches this registry before trying any others.
