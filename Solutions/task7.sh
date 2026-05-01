@@ -44,9 +44,7 @@ USER duffman
 ENTRYPOINT [ "/skeeter.sh" ]
 EOF
 
-podman build -t skeeter:1.0 -f ~/nginx/task7.dockerfile ~/nginx
-
-rm colors.tar skeeter.sh mosquitto.conf
+podman build -t skeeter:1.0 -f ~/nginx/task7/dockerfile ~/nginx
 
 podman run -d \
     --name mosquitto-1 \
