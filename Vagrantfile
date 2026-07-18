@@ -19,7 +19,11 @@ Vagrant.configure("2") do |config|
       v.cpus = 2
     end
 
-    registry.vm.provision :shell, :inline => "sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config; sudo systemctl restart sshd;"
+    registry.vm.provision :shell, :inline => <<-SHELL
+      sed -i -E 's/^#?PasswordAuthentication.*/PasswordAuthentication yes/' /etc/ssh/sshd_config /etc/ssh/sshd_config.d/*.conf 2>/dev/null
+      echo 'vagrant:vagrant' | chpasswd
+      systemctl restart sshd
+    SHELL
     registry.vm.provision :shell, :inline => "yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm -y; sudo yum install -y sshpass ansible"
 
   end
@@ -41,7 +45,11 @@ Vagrant.configure("2") do |config|
       v.cpus = 2
     end
 
-    workstation.vm.provision :shell, :inline => "sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config; sudo systemctl restart sshd;"
+    workstation.vm.provision :shell, :inline => <<-SHELL
+      sed -i -E 's/^#?PasswordAuthentication.*/PasswordAuthentication yes/' /etc/ssh/sshd_config /etc/ssh/sshd_config.d/*.conf 2>/dev/null
+      echo 'vagrant:vagrant' | chpasswd
+      systemctl restart sshd
+    SHELL
     workstation.vm.provision :shell, :inline => "yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm -y; sudo yum install -y sshpass ansible"
 
     workstation.vm.provision :ansible_local do |ansible|
